@@ -20,7 +20,13 @@ describe('TodoPresenter', () => {
   it('should set item completed status to true',()=>{
       let presenter = new TodoPresenter();
       presenter.setCompleted(1,true);
-      expect(presenter.Items[0].completed).toEqual(true);
+      expect(presenter.Items[0].completed).toBeTrue();
+    });
+
+   it('should set item completed status to false',()=>{
+        let presenter = new TodoPresenter();
+        presenter.setCompleted(1,false);
+        expect(presenter.Items[0].completed).toBeFalse();
     });
 
 });
