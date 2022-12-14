@@ -1,0 +1,22 @@
+
+<p>todolist works!</p>
+
+
+<ul >
+  <li *ngFor="let item of presenter.Items">
+    <input value="{{item.completed}}" type="checkbox" [checked]="item.completed" (change)="onCompletedChanged(item.id,$event)">
+    <div>{{item.title}}</div>
+    <div>{{item.content}}</div>
+    <button (click)="onDelete(item.id)">Delete</button>
+  </li>
+</ul>
+<h3>Add Item</h3>
+<div>
+  <span>Title:</span>
+  <input [ngModel]="newTitle" (ngModelChange)="newTitle = $event"/>
+</div>
+<div>
+  <span>Content:</span>
+  <input [ngModel]="newContent" (ngModelChange)="newContent = $event"/>
+</div>
+<button (click)="AddItem()" >Add Item</button>
